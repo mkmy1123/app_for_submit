@@ -8,3 +8,10 @@ ja:
         memo: メモ
         author: 著者
         picture: 写真
+  flash:
+    create: 作成しました
+    update: 更新しました
+    destroy: 削除しました
+  error:
+    count: 件
+    notice_body: のエラーが発生しました
