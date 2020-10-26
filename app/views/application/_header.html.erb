@@ -3,6 +3,13 @@
     <ul>
       <li><%= link_to '日本語', root_path(locale: 'ja') %></li>
       <li><%= link_to 'English', root_path(locale: 'en') %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'プロフィール', user_path(current_user) %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', user_session_path %></li>
+        <li><%= link_to '新規登録', new_user_registration_path %></li>
+      <% end %>
     </ul>
   </div>
 </header>

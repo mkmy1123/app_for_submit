@@ -1,7 +1,10 @@
 <div id="notice">
   <% if notice %>
-    <div class="notification is-success is-light">
-      <%= notice %>
-    </div>
+  <div class="notification is-success is-light">
+    <%= notice %>
+  </div>
   <% end %>
 </div>
+<% if user_signed_in? %>
+  <div id="notice">現在 <%= current_user.email %> でログイン中</div>
+<% end %>

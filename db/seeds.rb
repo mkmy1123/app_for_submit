@@ -12,4 +12,11 @@
     memo: "#{n}冊目の本",
     author: "mkmy1123"
   )
+
+  User.create!(
+    email: "example#{n}@example.com",
+    password: 'password',
+    postcode: '123-4567',
+    address: '東京都世田谷区',
+    introduction: 'こんにちは〜〜〜！')
 end
