@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
+<nav class="level">
+  <div class="level-left">
+    <h1 class="title">Books</h1>
+  </div>
+  <div class="level-right">
+    <%= link_to t('page.new'), url_for(new_book_path), class: "button is-dark" %>
+  </div>
+</nav>
 
-<p><%= link_to t('page.new'), url_for(new_book_path) %></p>
-<p><%= link_to '日本語', books_path(locale: 'ja') %> / <%= link_to 'English', books_path(locale: 'en') %></p>
-
-<h1>Books</h1>
-
-<table>
+<table class="table is-bordered is-fullwidth">
   <thead>
     <tr>
       <th><%= t('activerecord.attributes.book.title') %></th>
@@ -23,12 +25,12 @@
       <td><%= book.memo %></td>
       <td><%= book.author %></td>
       <td><%= book.picture %></td>
-      <td><%= link_to t('page.show'), url_for(book_path(book)) %></td>
-      <td><%= link_to t('page.edit'), url_for(edit_book_path(book)) %></td>
-      <td><%= link_to t('page.destroy'), book, method: :delete, data: { confirm: t('confirm') } %></td>
+      <td><%= link_to t('page.show'), url_for(book_path(book)), class: "button is-primary" %></td>
+      <td><%= link_to t('page.edit'), url_for(edit_book_path(book)), class: "button is-warning" %></td>
+      <td><%= link_to t('page.destroy'), book, method: :delete, data: { confirm: t('confirm') }, class: "button is-danger" %></td>
     </tr>
     <% end %>
-    </tbody>
+  </tbody>
 </table>
 
 <br>

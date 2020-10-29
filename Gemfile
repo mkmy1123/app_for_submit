@@ -32,6 +32,8 @@ gem 'awesome_print'
 gem 'carrierwave'
 gem 'rails-i18n'
 
+gem 'bulma-rails', '~> 0.9.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
