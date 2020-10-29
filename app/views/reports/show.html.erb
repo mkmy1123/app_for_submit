@@ -12,6 +12,11 @@
     </p>
 
     <p class="content">
+      <strong><%= Report.human_attribute_name(:practice_status) %></strong>
+      <%= @report.practice_status_i18n %>
+    </p>
+
+    <p class="content">
       <strong><%= Report.human_attribute_name(:start_at) %></strong>
       <%= l(@report.start_at, format: :short) %>
     </p>
@@ -31,6 +36,12 @@
 <%= link_to t('page.edit'), edit_report_path(@report) %> |
 <%= link_to t('page.back'), reports_path %>
 
-<h1>Comments</h1>
-<%= render 'comments/index', comments: @comments %>
-<%= render 'comments/form', comment: @comment %>
+<h1 class="title">Comments</h1>
+<div class="columns">
+  <div class="column is-two-fifths">
+    <%= render 'comments/form', comment: @comment %>
+  </div>
+  <div class="column">
+    <%= render 'comments/index', comments: @comments %>
+  </div>
+</div>

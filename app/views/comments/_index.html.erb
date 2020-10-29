@@ -1,4 +1,8 @@
 <% comments.each do |comment| %>
-  <strong><%= comment.name %></strong>
-  <%= simple_format comment.content %>
+  <div class="card">
+    <div class="card-content">
+      <strong><%= comment.name %></strong>
+      <%= simple_format comment.content %>
+    </div>
+  </div>
 <% end %>
