@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'books#index'
   resources :books
   resources :reports
+  resources :comments, only: %i[create destroy]
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

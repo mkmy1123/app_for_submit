@@ -30,3 +30,7 @@
 
 <%= link_to t('page.edit'), edit_report_path(@report) %> |
 <%= link_to t('page.back'), reports_path %>
+
+<h1>Comments</h1>
+<%= render 'comments/index', comments: @comments %>
+<%= render 'comments/form', comment: @comment %>

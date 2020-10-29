@@ -1,0 +1,19 @@
+<%= form_with model: comment do |f| %>
+  <div id="errors">
+    <%= render 'errors', obj: comment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.hidden_field :commentable_type, value: comment.commentable_type %>
+  <%= f.hidden_field :commentable_id, value: comment.commentable_id %>
+  <%= f.submit %>
+<% end %>

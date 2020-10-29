@@ -60,6 +60,9 @@ en:
         start_at: start
         end_at: end
         content: content
+      comment:
+        name: name
+        content: content
   enums:
     report:
       practice_status:
