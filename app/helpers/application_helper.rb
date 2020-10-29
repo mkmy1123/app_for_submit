@@ -10,4 +10,14 @@ module ApplicationHelper
   def postcode_format_required
     "#{User.human_attribute_name(:postcode)} #{t('page.postcode_alert')}"
   end
+
+  def convert_feeling_to_emoji(report)
+    if report.normal?
+      "🙂"
+    elsif report.bad?
+      "😢"
+    elsif report.good?
+      "😄"
+    end
+  end
 end

@@ -37,6 +37,9 @@ en:
       user:
         one: User
         other: '%{count} Users'
+      report:
+        one: Report
+        other: '%{count} Reports'
     attributes:
       book:
         title: title
@@ -49,7 +52,20 @@ en:
         address: address
         introduction: introduction
         icon_image: icon image
-
+      report:
+        title: title
+        practice_status: practice
+        feeling_status: feeling
+        learning_day: day
+        start_at: start
+        end_at: end
+        content: content
+  enums:
+    report:
+      practice_status:
+        html_css: HTML / CSS
+        ruby_on_rails: Ruby on Rails
+        javascript: JavaScript
   flash:
     create: successfully created
     update: successfully updated
@@ -74,6 +90,7 @@ en:
     unfollow: Unfollow
     profile_title: "%{user}'s profile"
     all_books: All Books
+    all_users: All Reports
     all_users: All Users
     followers: Followers
     followings: Followings
