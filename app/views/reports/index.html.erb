@@ -1,0 +1,34 @@
+<nav class="level">
+  <div class="level-left">
+    <h1 class="title"><%= Report.model_name.human(count: @reports.size) %></h1>
+  </div>
+  <div class="level-right">
+    <%= link_to t('page.new'), new_report_path, class: "button is-dark" %>
+  </div>
+</nav>
+
+<%= paginate @reports %>
+<table class="table is-bordered is-fullwidth">
+  <thead>
+    <tr>
+      <th><%= Report.human_attribute_name(:learning_day) %></th>
+      <th><%= Report.human_attribute_name(:feeling_status) %></th>
+      <th><%= Report.human_attribute_name(:title) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+    <tr>
+      <td><%= report.learning_day %></td>
+      <td><%= convert_feeling_to_emoji(report) %></td>
+      <td><%= report.title %></td>
+      <td><%= link_to t('page.show'), report_path(report), class: "button is-primary" %></td>
+      <td><%= link_to t('page.edit'), edit_report_path(report), class: "button is-warning" %></td>
+      <td><%= link_to t('page.destroy'), report, method: :delete, data: { confirm: t('confirm') }, class: "button is-danger" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

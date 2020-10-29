@@ -1,0 +1,44 @@
+<%= form_with model: report, local: true do |f| %>
+  <%= render 'errors', obj: report %>
+
+  <div class="field">
+    <%= f.label :practice_status %>
+    <%= f.select :practice_status, Report.practice_statuses.keys.map {|k| [t("enums.report.practice_status.#{k}"), k]} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :learning_day %>
+    <%= f.date_field :learning_day %>
+  </div>
+
+  <div class="field">
+    <%= f.label :feeling_status %>
+    <%= f.radio_button :feeling_status, :normal %> <span>🙂</span>
+    <%= f.radio_button :feeling_status, :bad %> <span>😢</span>
+    <%= f.radio_button :feeling_status, :good %> <span>😄</span>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_at %>
+    <%= f.time_select :start_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_at %>
+    <%= f.time_select :end_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

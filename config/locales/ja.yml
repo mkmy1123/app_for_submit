@@ -7,6 +7,9 @@ ja:
       user:
         one: ユーザー
         other: '%{count}人のユーザー'
+      report:
+        one: 日報
+        other: '%{count}件の日報'
     attributes:
       book:
         title: タイトル
@@ -19,7 +22,20 @@ ja:
         address: 住所
         introduction: 自己紹介
         icon_image: アイコン画像
-
+      report:
+        title: タイトル
+        practice_status: プラクティス
+        feeling_status: 今日の気分
+        learning_day: 学習日
+        start_at: 開始時間
+        end_at: 終了時間
+        content: 内容
+  enums:
+    report:
+      practice_status:
+        html_css: HTML / CSS
+        ruby_on_rails: Ruby on Rails
+        javascript: JavaScript
   flash:
     create: 作成しました
     update: 更新しました
@@ -44,6 +60,7 @@ ja:
     unfollow: フォローを外す
     profile_title: "%{user}のプロフィール"
     all_books: 本一覧
+    all_reports: 日報一覧
     all_users: ユーザー一覧
     followers: フォロワー一覧
     followings: フォロー一覧

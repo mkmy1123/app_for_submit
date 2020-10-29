@@ -1,0 +1,32 @@
+<article class="message is-large">
+  <div class="message-header">
+    <p>
+      <strong><%= Report.human_attribute_name(:title) %></strong>
+      <%= @report.title %>
+    </p>
+  </div>
+  <div class="message-body">
+    <p class="content">
+      <strong><%= Report.human_attribute_name(:feeling_status) %></strong>
+      <%= convert_feeling_to_emoji(@report) %>
+    </p>
+
+    <p class="content">
+      <strong><%= Report.human_attribute_name(:start_at) %></strong>
+      <%= l(@report.start_at, format: :short) %>
+    </p>
+
+    <p class="content">
+      <strong><%= Report.human_attribute_name(:end_at) %></strong>
+      <%= l(@report.end_at, format: :short) %>
+    </p>
+
+    <p class="content">
+      <strong><%= Report.human_attribute_name(:content) %></strong>
+      <%= simple_format @report.content %>
+    </p>
+  </div>
+</article>
+
+<%= link_to t('page.edit'), edit_report_path(@report) %> |
+<%= link_to t('page.back'), reports_path %>
