@@ -1,0 +1,4 @@
+<% comments.each do |comment| %>
+  <strong><%= comment.name %></strong>
+  <%= simple_format comment.content %>
+<% end %>

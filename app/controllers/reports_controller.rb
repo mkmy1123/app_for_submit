@@ -9,6 +9,11 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
+  def show
+    @comment = @report.comments.build
+    @comments = @report.comments
+  end
+
   def create
     @report = Report.new(report_params)
 
