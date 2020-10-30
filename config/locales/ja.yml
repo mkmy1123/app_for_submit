@@ -34,8 +34,7 @@ ja:
     show: 詳細
     edit: 編集
     destroy: 削除
-    locale: 言語選択
     profile: プロフィール
+    profile_title: "%{user}のプロフィール"
     all_books: 本一覧
     all_users: ユーザー一覧
-  profile_title: "%{user}のプロフィール"

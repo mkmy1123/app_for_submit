@@ -64,8 +64,7 @@ en:
     show: show
     edit: edit
     destroy: destroy
-    locale: choose a language
     profile: profile
+    profile_title: "%{user}'s profile"
     all_books: All Books
     all_users: All Users
-  profile_title: "%{user}'s profile"
