@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_101030) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "name"
     t.string "postcode"
     t.string "address"
     t.text "introduction"

@@ -1,23 +1,35 @@
-<h1>Profile</h1>
+<article class="message is-large">
+  <div class="message-header">
+    <p>
+      <strong><%= profile_title(@user) %></strong>
+    </p>
+  </div>
+  <div class="message-body">
+    <p class="content">
+      <strong><%= t('activerecord.attributes.user.name') %></strong>
+      <%= @user.name %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p class="content">
+      <strong><%= t('activerecord.attributes.user.email') %></strong>
+      <%= @user.email %>
+    </p>
 
-<p>
-  <strong>Postcode:</strong>
-  <%= @user.postcode if @user.postcode %>
-</p>
+    <p class="content">
+      <strong><%= t('activerecord.attributes.user.postcode') %></strong>
+      <%= @user.postcode %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @user.address if @user.address %>
-</p>
+    <p class="content">
+      <strong><%= t('activerecord.attributes.user.address') %></strong>
+      <%= @user.address %>
+    </p>
 
-<p>
-  <strong>Introduction:</strong>
-  <%= @user.introduction if @user.introduction %>
-</p>
+    <p class="content">
+      <strong><%=  t('activerecord.attributes.user.introduction') %></strong>
+      <%= simple_format @user.introduction %>
+    </p>
+  </div>
+</article>
 
-<%= link_to 'Back', books_path %>
+<%= link_to t('page.back'), url_for(users_path) %>

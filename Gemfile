@@ -36,8 +36,6 @@ gem 'bulma-rails', '~> 0.9.0'
 
 # by myself
 gem 'kaminari'
-
-# by myself
 gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb

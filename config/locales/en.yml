@@ -32,16 +32,24 @@ en:
   activerecord:
     models:
       book: book
+      user: user
     attributes:
       book:
         title: title
         memo: memo
         author: author
         picture: picture
+      user:
+        name: name
+        postcode: postcode
+        address: address
+        introduction: introduction
+
   flash:
     create: successfully created
     update: successfully updated
     destroy: successfully destroyed
+    login: signed in
   confirm: Are you sure?
   error:
     count: error
@@ -53,3 +61,8 @@ en:
     edit: edit
     destroy: destroy
     locale: choose a language
+    profile: profile
+    all_books: All Books
+    all_users: All Users
+  word:
+    my: My
