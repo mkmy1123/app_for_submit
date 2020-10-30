@@ -33,9 +33,7 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # 課題用にダミーアドレスで対応する
-  mail_address = 'mkmy1123@example.com'
-  password = 'password'
+  config.action_mailer.delivery_method = :letter_opener_web
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
@@ -44,8 +42,8 @@ Rails.application.configure do
       enable_starttls_auto: true,
       address: "smtp.gmail.com",
       port: 587,
-      user_name: mail_address,
-      password: password,
+      user_name: Rails.application.credentials.google[:email],
+      password: Rails.application.credentials.google[:password],
       authentication: "plain"
   }
 
