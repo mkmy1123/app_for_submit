@@ -1,6 +1,6 @@
 <nav class="level">
   <div class="level-left">
-    <h1 class="title">Users</h1>
+    <h1 class="title"><%= User.model_name.human(count: @users.count) %></h1>
   </div>
 </nav>
 
@@ -8,8 +8,8 @@
 <table class="table is-bordered is-fullwidth">
   <thead>
     <tr>
-      <th><%= t('activerecord.attributes.user.name') %></th>
-      <th><%= t('activerecord.attributes.user.email') %></th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-      <td><%= link_to t('page.show'), url_for(user_path(user)), class: "button is-primary" %></td>
+      <td><%= link_to t('page.show'), user_path(user), class: "button is-primary" %></td>
     </tr>
     <% end %>
   </tbody>

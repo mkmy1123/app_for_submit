@@ -3,7 +3,7 @@
     <ul>
       <li><%= link_to '日本語', root_path(locale: 'ja') %></li>
       <li><%= link_to 'English', root_path(locale: 'en') %></li>
-      <li><%= link_to t('page.all_books'), url_for(books_path) %></li>
+      <li><%= link_to t('page.all_books'), books_path %></li>
       <% if user_signed_in? %>
         <li><%= link_to t('page.all_users'), users_path %></li>
         <li><%= link_to t('users.sessions.destroy'), destroy_user_session_path, method: :delete %></li>

@@ -31,8 +31,12 @@
 en:
   activerecord:
     models:
-      book: book
-      user: user
+      book:
+        one: Book
+        other: '%{count} Books'
+      user:
+        one: User
+        other: '%{count} Users'
     attributes:
       book:
         title: title
@@ -64,5 +68,4 @@ en:
     profile: profile
     all_books: All Books
     all_users: All Users
-  word:
-    my: My
+  profile_title: "%{user}'s profile"

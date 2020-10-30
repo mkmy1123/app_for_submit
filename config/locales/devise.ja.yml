@@ -35,6 +35,10 @@ ja:
       destroy: ログアウト
       signed_in: ログインしました。
       signed_out: ログアウトしました。
+    registrations:
+      new:
+        sign_up: アカウント登録
+
   users:
     confirmations:
       confirmed: メールアドレスが確認できました。

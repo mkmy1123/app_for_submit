@@ -1,8 +1,12 @@
 ja:
   activerecord:
     models:
-      book: 本
-      user: ユーザー
+      book:
+        one: 本
+        other: '%{count}冊の本'
+      user:
+        one: ユーザー
+        other: '%{count}人のユーザー'
     attributes:
       book:
         title: タイトル
@@ -34,5 +38,4 @@ ja:
     profile: プロフィール
     all_books: 本一覧
     all_users: ユーザー一覧
-  word:
-    my: 自分の
+  profile_title: "%{user}のプロフィール"

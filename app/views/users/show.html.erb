@@ -1,35 +1,30 @@
 <article class="message is-large">
   <div class="message-header">
     <p>
-      <strong><%= profile_title(@user) %></strong>
+      <strong><%= t('profile_title', user: @user.email) %></strong>
     </p>
   </div>
   <div class="message-body">
     <p class="content">
-      <strong><%= t('activerecord.attributes.user.name') %></strong>
+      <strong><%= User.human_attribute_name(:name) %></strong>
       <%= @user.name %>
     </p>
 
     <p class="content">
-      <strong><%= t('activerecord.attributes.user.email') %></strong>
-      <%= @user.email %>
-    </p>
-
-    <p class="content">
-      <strong><%= t('activerecord.attributes.user.postcode') %></strong>
+      <strong><%= User.human_attribute_name(:postcode) %></strong>
       <%= @user.postcode %>
     </p>
 
     <p class="content">
-      <strong><%= t('activerecord.attributes.user.address') %></strong>
+      <strong><%= User.human_attribute_name(:address) %></strong>
       <%= @user.address %>
     </p>
 
     <p class="content">
-      <strong><%=  t('activerecord.attributes.user.introduction') %></strong>
+      <strong><%= User.human_attribute_name(:introduction) %></strong>
       <%= simple_format @user.introduction %>
     </p>
   </div>
 </article>
 
-<%= link_to t('page.back'), url_for(users_path) %>
+<%= link_to t('page.back'), users_path %>
