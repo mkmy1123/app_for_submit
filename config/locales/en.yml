@@ -54,6 +54,7 @@ en:
     update: successfully updated
     destroy: successfully destroyed
     login: signed in
+    email_notice: Please add email
   confirm: Are you sure?
   error:
     count: error
@@ -68,3 +69,4 @@ en:
     profile_title: "%{user}'s profile"
     all_books: All Books
     all_users: All Users
+    sign_in_with_provider: "Sign in with %{provider}"

@@ -23,7 +23,11 @@
 
 <div class="field">
   <%= f.label :name %><br />
-  <%= f.text_field :name, autocomplete: "name" %>
+  <% if session[:github] %>
+    <%= f.text_field :name, value: session[:github]["info"]["nickname"] %>
+  <% else %>
+    <%= f.text_field :name, autocomplete: "name" %>
+  <% end %>
 </div>
 
 <div class="field">
