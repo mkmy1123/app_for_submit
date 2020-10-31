@@ -8,18 +8,20 @@
   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 </div>
 
-<div class="field">
-  <%= f.label :password %>
-  <% if @minimum_password_length %>
-  <em><%= t('users.shared.minimum_password_length', count: @minimum_password_length) %></em>
-  <% end %><br />
-  <%= f.password_field :password, autocomplete: "new-password" %>
-</div>
+<% unless session[:github] %>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em><%= t('users.shared.minimum_password_length', count: @minimum_password_length) %></em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
 
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-</div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+<% end %>
 
 <div class="field">
   <%= f.label :name %><br />
