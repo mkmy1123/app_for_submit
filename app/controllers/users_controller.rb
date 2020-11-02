@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
+  before_action :block_by_other_users, only: %i[edit update]
 
   def index
     @users = User.page(params[:page])
@@ -26,5 +27,11 @@ class UsersController < ApplicationController
 
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def block_by_other_users
+      if @user != current_user
+        redirect_to root_path, notice: '操作できるのはご自身のアカウントのみです'
+      end
     end
 end
