@@ -55,6 +55,7 @@ en:
     destroy: successfully destroyed
     login: signed in
     email_notice: Please add email
+    error: An error has occurred, please try again
   confirm: Are you sure?
   error:
     count: error

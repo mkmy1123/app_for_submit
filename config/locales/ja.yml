@@ -25,6 +25,7 @@ ja:
     destroy: 削除しました
     login: ログイン中
     email_notice: メールアドレスの登録が必須です、ご記入ください
+    error: エラーが発生しました、もう一度ログインしてください
   confirm: 本当によろしいですか？
   error:
     count: 件
