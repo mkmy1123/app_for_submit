@@ -48,6 +48,7 @@ en:
         postcode: postcode
         address: address
         introduction: introduction
+        icon_image: icon image
 
   flash:
     create: successfully created

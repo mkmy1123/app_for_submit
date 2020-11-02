@@ -18,6 +18,7 @@ ja:
         postcode: 郵便番号
         address: 住所
         introduction: 自己紹介
+        icon_image: アイコン画像
 
   flash:
     create: 作成しました

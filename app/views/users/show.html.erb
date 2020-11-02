@@ -6,6 +6,11 @@
   </div>
   <div class="message-body">
     <p class="content">
+      <strong><%= User.human_attribute_name(:icon_image) %></strong>
+      <%= image_tag @user.icon_image.variant(resize_to_limit: [200, 200]) if @user.icon_image.attached? %>
+    </p>
+
+    <p class="content">
       <strong><%= User.human_attribute_name(:name) %></strong>
       <%= @user.name %>
     </p>
@@ -27,4 +32,4 @@
   </div>
 </article>
 
-<%= link_to t('page.back'), users_path %>
+<%= link_to t('page.back'), users_path %> | <%= link_to t('page.edit'), edit_user_path(@user) %>

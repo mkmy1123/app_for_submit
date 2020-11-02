@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-  resources :users, only: %i[show index]
+  resources :users, only: %i[show index edit update]
 end
