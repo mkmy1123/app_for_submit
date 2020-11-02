@@ -72,3 +72,4 @@ en:
     all_books: All Books
     all_users: All Users
     sign_in_with_provider: "Sign in with %{provider}"
+    postcode_alert: (required "-")

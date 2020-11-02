@@ -6,4 +6,8 @@ module ApplicationHelper
       link_to t('page.edit'), edit_user_path(@user)
     end
   end
+
+  def postcode_format_required
+    "#{User.human_attribute_name(:postcode)} #{t('page.postcode_alert')}"
+  end
 end

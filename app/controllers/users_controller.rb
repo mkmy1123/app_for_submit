@@ -14,8 +14,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to @user, notice: t('flash.update')
+    if @user.update(user_params)
+      redirect_to @user, notice: t('flash.update')
+    else
+      render :edit
+    end
   end
 
   private
