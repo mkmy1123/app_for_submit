@@ -29,11 +29,11 @@ class UsersController < ApplicationController
     end
 
     def set_user
-      @user = User.find(params[:id])
+      @user ||= User.find(params[:id])
     end
 
     def block_by_other_users
-      if @user != current_user
+      if set_user != current_user
         redirect_to root_path, notice: '操作できるのはご自身のアカウントのみです'
       end
     end
