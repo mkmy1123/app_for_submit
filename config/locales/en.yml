@@ -68,8 +68,12 @@ en:
     edit: edit
     destroy: destroy
     profile: profile
+    follow: Follow
+    unfollow: Unfollow
     profile_title: "%{user}'s profile"
     all_books: All Books
     all_users: All Users
+    followers: "%{user}'s followers"
+    followings: "%{user}'s followings"
     sign_in_with_provider: "Sign in with %{provider}"
     postcode_alert: (required "-")

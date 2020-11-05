@@ -1,2 +1,2 @@
-<h1 class="title"><%= @user.name %>'s followings</h1>
+<h1 class="title"><%= t('page.followings', user: @user.email) %></h1>
 <%= render 'users/shared/index', users: @users %>
