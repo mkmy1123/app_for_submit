@@ -1,8 +1,8 @@
 <p>
   <strong>Following:</strong>
-  <%= link_to user.followings.count, following_user_path(@user) %>
+  <%= link_to user.followings.size, following_user_path(@user) %>
   <strong>Followers:</strong>
-  <%= link_to user.followers.count, follower_user_path(@user) %>
+  <%= link_to user.followers.size, follower_user_path(@user) %>
 </p>
 
 <% if user_signed_in? %>

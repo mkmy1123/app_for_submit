@@ -43,7 +43,7 @@ ja:
     profile_title: "%{user}のプロフィール"
     all_books: 本一覧
     all_users: ユーザー一覧
-    followers: "%{user}のフォロワー一覧"
-    followings: "%{user}のフォロー一覧"
+    followers: フォロワー一覧
+    followings: フォロー一覧
     sign_in_with_provider: "%{provider}でログイン"
     postcode_alert: (ハイフン必須)
