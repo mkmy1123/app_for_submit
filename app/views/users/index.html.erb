@@ -1,27 +1,2 @@
-<nav class="level">
-  <div class="level-left">
-    <h1 class="title"><%= User.model_name.human(count: @users.count) %></h1>
-  </div>
-</nav>
-
-<%= paginate @users %>
-<table class="table is-bordered is-fullwidth">
-  <thead>
-    <tr>
-      <th><%= User.human_attribute_name(:name) %></th>
-      <th><%= User.human_attribute_name(:email) %></th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <td><%= link_to t('page.show'), user_path(user), class: "button is-primary" %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<h1 class="title">ユーザー一覧</h1>
+<%= render 'users/shared/index', users: @users %>

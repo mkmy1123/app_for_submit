@@ -1,16 +1,14 @@
 <p>
   <strong>Following:</strong>
   <%= link_to user.followings.count, following_user_path(@user) %>
-</p>
-<p>
   <strong>Followers:</strong>
   <%= link_to user.followers.count, follower_user_path(@user) %>
 </p>
 
 <% if user_signed_in? %>
   <% if current_user.following?(user) %>
-    <%= render 'users/shared/unfollow_btn' %>
+    <%= render 'users/shared/unfollow_btn', user: @user %>
   <% elsif current_user != user %>
-    <%= render 'users/shared/follow_btn' %>
+    <%= render 'users/shared/follow_btn', user: @user %>
   <% end %>
 <% end %>

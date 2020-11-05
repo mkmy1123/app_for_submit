@@ -1,1 +1,4 @@
-<%= link_to 'フォローする', root_path, class: 'button' %>
+<%= form_with url: user_relationships_path do |f| %>
+  <%= f.hidden_field :user_id, value: user.id %>
+  <%= f.submit 'Follow', class: 'button' %>
+<% end %>

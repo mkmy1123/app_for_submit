@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  resources :user_relationships, only: %i[create destroy]
   resources :users, only: %i[show index edit update] do
     get :following, on: :member, to: 'users/followings#index'
     get :follower, on: :member, to: 'users/followers#index'
   end
-  resources :user_relationships, only: %i[create destroy]
 end
