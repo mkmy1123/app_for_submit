@@ -1,8 +1,11 @@
 <% comments.each do |comment| %>
   <div class="card">
     <div class="card-content">
-      <strong><%= comment.name %></strong>
-      <%= simple_format comment.content %>
+      <strong><%= link_to comment.user.name, user_path(comment.user) %></strong>
+      <% if comment.user == current_user %>
+        <%= link_to t('page.destroy'), comment_path(comment), method: :delete, class: 'button is-small' %>
+      <% end %>
+      <p><%= simple_format comment.content %></p>
     </div>
   </div>
 <% end %>
