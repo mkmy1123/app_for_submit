@@ -1,3 +1,3 @@
-<%= form_with url: user_relationship_path(user), method: :delete do |f| %>
+<%= form_with url: user_relationship_path(user), method: :delete, local: true do |f| %>
   <%= f.submit t('page.unfollow'), class: 'button' %>
 <% end %>

@@ -27,6 +27,8 @@ ja:
     login: ログイン中
     email_notice: メールアドレスの登録が必須です、ご記入ください
     error: エラーが発生しました、もう一度ログインしてください
+    follow: フォローしました
+    unfollow: フォローを外しました
   confirm: 本当によろしいですか？
   error:
     count: 件

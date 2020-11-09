@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_133604) do
+ActiveRecord::Schema.define(version: 2020_11_09_062319) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,27 @@ ActiveRecord::Schema.define(version: 2020_11_05_133604) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
     t.string "picture"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "commentable_type", null: false
+    t.integer "commentable_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", default: 1, null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "practice_status", null: false
+    t.integer "feeling_status", default: 0, null: false
+    t.date "learning_day", null: false
+    t.datetime "start_at", null: false
+    t.datetime "end_at", null: false
+    t.text "content", null: false
   end
 
   create_table "user_relationships", force: :cascade do |t|
@@ -75,4 +96,5 @@ ActiveRecord::Schema.define(version: 2020_11_05_133604) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "users"
 end

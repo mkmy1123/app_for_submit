@@ -57,6 +57,8 @@ en:
     login: signed in
     email_notice: Please add email
     error: An error has occurred, please try again
+    follow: successfully followed
+    unfollow: successfully removed following
   confirm: Are you sure?
   error:
     count: error
