@@ -2,7 +2,7 @@
   <div class="message-header">
     <p>
       <strong><%= t('page.profile_title', user: @user.email) %></strong>
-      <%= appears_edit_btn_when_user_equals_current_user(@user) %>
+      <%= appears_edit_btn_when_user_equals_current_user(@user, current_user) %>
     </p>
   </div>
   <div class="message-body">
