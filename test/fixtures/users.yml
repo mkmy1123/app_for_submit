@@ -9,3 +9,9 @@ mkmy1123:
   name: mkmy1123
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   confirmed_at: <%= Time.now - 100 %>
+
+tanaka1010:
+  email: tanaka1010@example.com
+  name: tanaka1010
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= Time.now - 100 %>
