@@ -11,7 +11,7 @@ class ReportsController < ApplicationController
 
   def show
     @comments = @report.comments
-    @comment = Comment.new(commentable_type: 'Report', commentable_id: @report.id)
+    @comment = Comment.new(commentable: @report)
   end
 
   def create
