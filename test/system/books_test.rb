@@ -34,7 +34,7 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '編集', match: :first
 
-    fill_in 'メモ', with: 'チェリー本やっぱり最高〜！'
+    fill_in 'メモ', with: ''
     fill_in 'メモ', with: 'チェリー本やっぱり最高〜！'
     click_on '更新する'
 
