@@ -35,6 +35,7 @@ class BooksTest < ApplicationSystemTestCase
     click_on '編集', match: :first
 
     fill_in 'メモ', with: 'チェリー本やっぱり最高〜！'
+    fill_in 'メモ', with: 'チェリー本やっぱり最高〜！'
     click_on '更新する'
 
     assert_text '更新しました'

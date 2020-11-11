@@ -7,6 +7,7 @@
 mkmy1123:
   email: mkmy1123@example.com
   name: mkmy1123
+  introduction: はじめまして！
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   confirmed_at: <%= Time.now - 100 %>
 
