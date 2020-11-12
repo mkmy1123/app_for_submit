@@ -3,10 +3,14 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
+  concern :commentable do
+    resources :comments, only: %i[create]
+  end
+
   root 'books#index'
-  resources :books
-  resources :reports
-  resources :comments, only: %i[create destroy]
+  resources :books, concerns: :commentable
+  resources :reports, concerns: :commentable
+  resources :comments, only: %i[destroy]
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
