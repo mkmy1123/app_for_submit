@@ -1,12 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :set_commentable, only: %i[create]
+
   def create
     @comment = Comment.new(comments_params)
     @comment.user_id = current_user.id
-    if params[:book_id]
-      @comment.commentable = Book.find_by(params[:book_id])
-    elsif params[:report_id]
-      @comment.commentable = Report.find_by(params[:report_id])
-    end
+    @comment.commentable = @commentable
     if @comment.save
       redirect_back fallback_location: root_path
     end
@@ -21,5 +19,10 @@ class CommentsController < ApplicationController
   private
     def comments_params
       params.require(:comment).permit(:content)
+    end
+
+    def set_commentable
+      resource, id = request.path.split('/')[1, 2]
+      @commentable = resource.classify.constantize.find(id)
     end
 end
