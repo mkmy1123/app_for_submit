@@ -38,6 +38,7 @@ class UsersTest < ApplicationSystemTestCase
     sign_in_as(@user)
     visit user_path(@user)
     click_link '編集'
+    fill_in '自己紹介', with: ''
     fill_in '自己紹介', with: 'こんにちは！'
     click_button '更新する'
     assert_text '更新しました'

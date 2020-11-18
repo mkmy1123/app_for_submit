@@ -1,0 +1,8 @@
+first_report:
+  title: 初めての日報
+  practice_status: 0
+  feeling_status: 0
+  learning_day: <%= Time.now %>
+  start_at: <%= Time.now - 100 %>
+  end_at: <%= Time.now - 50 %>
+  content: いい感じ〜
