@@ -3,7 +3,7 @@
 require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
-  include SignInHelper
+  include DeviseHelper
   include SelectDateHelper
   setup do
     @first_report = reports(:first_report)
@@ -21,8 +21,8 @@ class ReportsTest < ApplicationSystemTestCase
     click_on '新規作成'
 
     fill_in 'タイトル', with: '2日めの日報'
-    fill_in '学習日',	with: '002020-01-01'
-    fill_in '内容', with: '頑張ろう〜！'
+    fill_in '学習日',   with: '002020-01-01'
+    fill_in '内容',     with: '頑張ろう〜！'
     select_time("11", "00", from: "開始時間")
     select_time("13", "00", from: "終了時間")
 

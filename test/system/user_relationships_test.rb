@@ -3,7 +3,7 @@
 require 'application_system_test_case'
 
 class UserRelationshipsTest < ApplicationSystemTestCase
-  include SignInHelper
+  include DeviseHelper
   setup do
     @user = users(:mkmy1123)
     @other_user = users(:tanaka1010)

@@ -3,7 +3,7 @@
 require 'application_system_test_case'
 
 class CommentsTest < ApplicationSystemTestCase
-  include SignInHelper
+  include DeviseHelper
   setup do
     @user = users(:mkmy1123)
     @other_user = users(:tanaka1010)
@@ -30,16 +30,22 @@ class CommentsTest < ApplicationSystemTestCase
 
   test 'creating a BookComment' do
     visit book_url(@cherry_book)
+    assert_no_text '同感です！'
     fill_in '本文',	with: '同感です！'
-    click_on '登録する'
-    assert_text '同感です！'
+    assert_difference('Comment.count', 1) do
+      click_on '登録する'
+      assert_text '同感です！'
+    end
   end
 
   test 'creating a ReportComment' do
     visit report_url(@first_report)
+    assert_no_text '素敵です！'
     fill_in '本文',	with: '素敵です！'
-    click_on '登録する'
-    assert_text '素敵です！'
+    assert_difference('Comment.count', 1) do
+      click_on '登録する'
+      assert_text '素敵です！'
+    end
   end
 
   test 'destroying a BookComment' do

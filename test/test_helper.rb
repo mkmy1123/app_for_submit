@@ -12,7 +12,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  module SignInHelper
+  module DeviseHelper
     def sign_in_as(user)
       visit new_user_session_path
       fill_in "Eメール",	with: user.email
@@ -23,6 +23,10 @@ class ActiveSupport::TestCase
     def sign_out
       visit root_path
       click_link 'ログアウト'
+    end
+
+    def current_user
+      users(:mkmy1123)
     end
   end
 
